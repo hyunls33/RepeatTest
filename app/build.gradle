@@ -12,8 +12,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            // 난독화 활성화 여부
+            minifyEnabled true
+            // proguard-android-optimize : apk를 더 최적화 하기위해 optimize 옵션 사용. proguard-android 보다 빌드시간 길어짐.
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
