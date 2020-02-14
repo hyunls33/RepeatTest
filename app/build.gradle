@@ -13,13 +13,18 @@ android {
     }
     buildTypes {
         debug {
-            // 난독화 활성화 여부
+            // 보통 debug 모드 시에는 false로 사용함.
+            // 난독화 활성화 여부(코드 축소 여부...)
             minifyEnabled true
+            // 리소스 축소 여부
+            shrinkResources true
             // proguard-android-optimize : apk를 더 최적화 하기위해 optimize 옵션 사용. proguard-android 보다 빌드시간 길어짐.
+            // proguard-debug.pro 를 생성하여 디버그 시의 proguard 규칙을 별도 설정 가능.
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
