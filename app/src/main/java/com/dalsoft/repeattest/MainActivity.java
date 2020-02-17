@@ -43,12 +43,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.button_start) {
+            commentList.clear();
+
             AtomicBoolean check = new AtomicBoolean(true);
 
             Disposable disposable = Observable.just(0)
                     .subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .concatMap(test -> APIGenerator.apiService.getTestData(startIndex)
+                    .concatMap(test -> RetrofitGeneratorTest.getService().getTestData(startIndex)
                                             .subscribeOn(Schedulers.newThread())
                                             .observeOn(AndroidSchedulers.mainThread()))
                     .repeatUntil(() -> !check.get())
@@ -65,9 +67,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         System.out.println("결과 목록 갯수 : " + commentList.size());
                     }, this::apiCallError, this::complete);
 
+//            // 이예!!!!!3
+//            Disposable disposable = Observable.just(0)
+//                    .subscribeOn(Schedulers.newThread())
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .concatMap(test -> APIGenerator.apiService.getTestData(startIndex)
+//                                            .subscribeOn(Schedulers.newThread())
+//                                            .observeOn(AndroidSchedulers.mainThread()))
+//                    .repeatUntil(() -> !check.get())
+//                    .subscribe(comments -> {
+//
+//                        commentList.addAll(comments);
+//
+//                        startIndex++;
+//
+//                        if (comments.size() == 0) {
+//                            check.set(false);
+//                        }
+//
+//                        System.out.println("결과 목록 갯수 : " + commentList.size());
+//                    }, this::apiCallError, this::complete);
 
 
-            // 이예!!!!!2
+
+//            // 이예!!!!!2
 //            AtomicBoolean check = new AtomicBoolean(true);
 //
 //            Disposable disposable = Observable.just(0)
