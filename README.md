@@ -4,10 +4,12 @@ Android에서 사용하는 Retrofit과 RxJava를 테스트 하기 위한 프로�
 
 
 ## Retrofit
+![retrofit](https://user-images.githubusercontent.com/36907266/74799161-1e88fe80-5313-11ea-9b66-3d2ac0cd1a8a.png)
  - Square사에서 제공하는 Http 통신을 위한 오픈소스 라이브러리
  - REST API를 안드로이드에서 쉽게 이용할 수 있게 해주는 도구
 
 ## RxJava *(Reactive Extensions Java)*
+![rxjava](https://user-images.githubusercontent.com/36907266/74799226-4ed09d00-5313-11ea-92f1-f9b83faf5a28.png)
  - 객체지향형인  Java를 Reactive Programming이 가능하게 해주는 구현체
  - Reactive  Programming : 데이터나 이벤트 변화와 반응에 초점을 맞춘 프로그래밍
  - 비동기 처리  및 Callback 처리를 쉽게 다룰 수 있음
