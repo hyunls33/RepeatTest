@@ -1,8 +1,9 @@
 # Retrofit 및 RxJava 사용
 
-Android에서 사용하는 Retrofit과 RxJava를 테스트 하기 위한 프로젝트.
+Retrofit과 RxJava를 사용한 Android 프로젝트.
 
 
+# 사용 라이브러리
 ## Retrofit
 ![retrofit](https://user-images.githubusercontent.com/36907266/74799161-1e88fe80-5313-11ea-9b66-3d2ac0cd1a8a.png)
  - Square사에서 제공하는 Http 통신을 위한 오픈소스 라이브러리
@@ -14,13 +15,16 @@ Android에서 사용하는 Retrofit과 RxJava를 테스트 하기 위한 프로�
  - Reactive  Programming : 데이터나 이벤트 변화와 반응에 초점을 맞춘 프로그래밍
  - 비동기 처리  및 Callback 처리를 쉽게 다룰 수 있음
 
-	 > 설명 참조 https://zeddios.tistory.com/689
+	 > 설명 참조
+	 > https://zeddios.tistory.com/689
+	 > http://reactivex.io/documentation/ko/observable.html
 
-## 개선사항
+
+# 개선사항
 
  1. Retrofit에서 RxJava Adapter 사용 시 RxJava2 사용
 
-	> Retrofit 사용 시, Call이라는 객체를 리턴한다. 따라서 RxJava에서 사용하는 Observables객체를 리턴할 수 있도록 adapter 등록이 필요하다.
+	> Retrofit 사용 시, RxJava에서 사용하는 Observables객체를 리턴할 수 있도록 adapter 등록이 필요하다.
 	
  2. Retrofit Interceptor 사용
 
