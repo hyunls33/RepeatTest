@@ -13,6 +13,11 @@ Retrofit과 RxJava를 사용한 Android 프로젝트.
 ![rxjava](https://user-images.githubusercontent.com/36907266/74799226-4ed09d00-5313-11ea-92f1-f9b83faf5a28.png)
  - 객체지향형인  Java를 Reactive Programming이 가능하게 해주는 구현체
  - Reactive  Programming : 데이터나 이벤트 변화와 반응에 초점을 맞춘 프로그래밍
+ - Observer pattern을 응용, 확장한 라이브러리
+ 
+	> **Observer pattern**
+	> 객체의 상태 변화를 관찰하는 관찰자들, 즉 옵저버들의 목록을 객체에 등록하여 상태 변화가 있을 때마다 메서드 등을 통해 객체가 직접 목록의 각 옵저버에게 통지하도록 하는 디자인 패턴
+	
  - 비동기 처리  및 Callback 처리를 쉽게 다룰 수 있음
 
 	 > 설명 참조
