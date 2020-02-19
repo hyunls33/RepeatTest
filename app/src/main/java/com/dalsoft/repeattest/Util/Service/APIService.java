@@ -1,6 +1,6 @@
-package com.dalsoft.repeattest;
+package com.dalsoft.repeattest.Util.Service;
 
-import com.google.gson.JsonObject;
+import com.dalsoft.repeattest.Util.Dto.Comments;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -10,10 +10,8 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface APIService {

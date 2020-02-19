@@ -8,4 +8,69 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--  Layout  -->
+    <style name="LayoutMatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="LayoutWrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="LayoutWidthMatch">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="LayoutHeightMatch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!--  Button  -->
+    <style name="DefaultButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="GreenButton" parent="DefaultButton">
+        <item name="android:background">@drawable/green_button</item>
+    </style>
+
+    <style name="GrayButton" parent="DefaultButton">
+        <item name="android:background">@drawable/gray_button</item>
+    </style>
+
+    <!--  Text  -->
+    <style name="BlackText" parent="LayoutWrapContent">
+        <item name="android:color">@color/black</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="BlackEllipsizeText" parent="BlackText">
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Dialog -->
+    <style name="DefaultAlertDialogTitleStyle">
+        <item name="android:textSize">22dp</item>
+        <item name="android:textColor">@color/blue_0E68BD</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+    </style>
+
+    <style name="DefaultAlertDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@color/white</item>                        <!--Dialog background-->
+        <item name="android:textColorPrimary">@color/gray_363636</item>                  <!--content text color-->
+        <item name="android:windowTitleStyle">@style/DefaultAlertDialogTitleStyle</item> <!--title text style-->
+        <item name="colorAccent">@color/colorAccent</item>                               <!--Button text color-->
+        <item name="windowFixedWidthMajor">90%</item>
+        <item name="windowFixedWidthMinor">90%</item>
+    </style>
 </resources>

@@ -1,4 +1,4 @@
-package com.dalsoft.repeattest;
+package com.dalsoft.repeattest.Util.Dto;
 
 public class Comments {
 

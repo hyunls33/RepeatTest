@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/white_border_item"
+    android:layout_marginVertical="4dp"
+    android:layout_marginHorizontal="12dp"
+    android:paddingVertical="4dp"
+    android:paddingHorizontal="8dp"
+    style="@style/LayoutWidthMatch">
+
+    <TextView
+        android:id="@+id/textView_postComment"
+        style="@style/BlackText"/>
+    <TextView
+        android:id="@+id/textView_name"
+        android:layout_marginVertical="4dp"
+        style="@style/BlackEllipsizeText"/>
+    <TextView
+        android:id="@+id/textView_email"
+        style="@style/BlackEllipsizeText"/>
+</LinearLayout>

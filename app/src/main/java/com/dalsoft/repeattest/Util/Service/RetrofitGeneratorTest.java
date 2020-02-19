@@ -1,4 +1,4 @@
-package com.dalsoft.repeattest;
+package com.dalsoft.repeattest.Util.Service;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -12,24 +12,25 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitGeneratorTest {
-    static OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
-                .addInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException {
-                        Request.Builder requestBuilder = chain.request().newBuilder();
-
-                        requestBuilder.addHeader("Authorization", "사용할 토큰");
-
-                        return chain.proceed(requestBuilder.build());
-                    }
-                })
+    private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
+//                // Intercept 영역은 Http 요청 전에 이루어지는 로직
+//                .addInterceptor(new Interceptor() {
+//                    @Override
+//                    public Response intercept(Chain chain) throws IOException {
+//                        Request.Builder requestBuilder = chain.request().newBuilder();
+//
+//                        requestBuilder.addHeader("Authorization", "사용할 토큰");
+//
+//                        return chain.proceed(requestBuilder.build());
+//                    }
+//                })
                 .connectTimeout(3, TimeUnit.SECONDS)
                 .readTimeout(3, TimeUnit.SECONDS)
                 .writeTimeout(3, TimeUnit.SECONDS);
 
-    static String baseUrl = "http://jsonplaceholder.typicode.com/";
+    private static String baseUrl = "http://jsonplaceholder.typicode.com/";
 
-    static RetrofitServiceTest getService() {
+    public static RetrofitServiceTest getService() {
         return new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .client(httpClient.build())
