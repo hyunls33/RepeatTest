@@ -105,30 +105,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             button_clear.setEnabled(false);
             commentAdapter.notifyDataSetChanged();
 
-//            // CASE 1
-//            // 반복 여부
-//            AtomicBoolean check = new AtomicBoolean(true);
-//
-//            // 서버에서 줄 데이터가 없을 때까지 반복적으로 api를 호출하여 데이터를 받아올 수 있음
-//            Disposable disposable1 = Observable.just(0)
-//                            .subscribeOn(Schedulers.newThread())
-//                            .observeOn(AndroidSchedulers.mainThread())
-//                            .concatMap(test -> RetrofitGeneratorTest.getService().getTestData(startIndex)
-//                                                    .subscribeOn(Schedulers.newThread())
-//                                                    .observeOn(AndroidSchedulers.mainThread()))
-//                            .repeatUntil(() -> !check.get()) // 반복 여부 체크
-//                            .subscribe(comments -> {
-//
-//                                commentList.addAll(comments);
-//
-//                                startIndex++;
-//
-//                                if (comments.size() == 0) {
-//                                    check.set(false); // 넘어온 데이터가 없을 경우 더이상 호출하지 않도록 반복여부 변경
-//                                }
-//
-//                                System.out.println("결과 목록 갯수 : " + commentList.size());
-//                            }, this::apiCallError, this::complete);
+            // CASE 1
+            // 반복 여부
+            AtomicBoolean check = new AtomicBoolean(true);
+
+            // 서버에서 줄 데이터가 없을 때까지 반복적으로 api를 호출하여 데이터를 받아올 수 있음
+            Disposable disposable1 = Observable.just(0)
+                            .subscribeOn(Schedulers.newThread())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .concatMap(test -> RetrofitGeneratorTest.getService().getTestData(startIndex)
+                                                    .subscribeOn(Schedulers.newThread())
+                                                    .observeOn(AndroidSchedulers.mainThread()))
+                            .repeatUntil(() -> !check.get()) // 반복 여부 체크
+                            .subscribe(comments -> {
+
+                                commentList.addAll(comments);
+
+                                startIndex++;
+
+                                if (comments.size() == 0) {
+                                    check.set(false); // 넘어온 데이터가 없을 경우 더이상 호출하지 않도록 반복여부 변경
+                                }
+
+                                System.out.println("결과 목록 갯수 : " + commentList.size());
+                            }, this::apiCallError, this::complete);
 
 
             // CASE 2
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .subscribe(comments -> commentList.addAll(comments), this::apiCallError, this::complete);
 
             // 해지를 위해 compositeDisposable에 추가
-//            compositeDisposable.add(disposable1);
+            compositeDisposable.add(disposable1);
             compositeDisposable.add(disposable2);
         } else if (view.getId() == R.id.button_clear) {
             dialogHelper = new DialogHelper();
