@@ -10,8 +10,6 @@ import androidx.appcompat.app.AlertDialog;
 public class DialogHelper {
     private AlertDialog.Builder alertDialogBuilder;
     private AlertDialog alertDialog;
-    private DialogInterface.OnClickListener mNegativeClickListener;
-    private DialogInterface.OnClickListener mPositiveClickListener;
 
     public void dialogShow(Context context, String title, String message, DialogInterface.OnClickListener mPositiveClickListener, DialogInterface.OnClickListener mNegativeClickListener) {
         alertDialogBuilder = new AlertDialog.Builder(context);

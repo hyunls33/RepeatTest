@@ -34,7 +34,7 @@ public class RetrofitGeneratorTest {
         return new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .client(httpClient.build())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // 요청결과를 RxJava의 Observable로 전달받음
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // 요청결과를 RxJava의 Observable로 전달받음(Factory Pattern)
                 .addConverterFactory(GsonConverterFactory.create())        // Json형태의 결과를 원하는 형태의 class로 변환
                 .build()
                 .create(RetrofitServiceTest.class);
